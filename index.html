@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="text/javascript" href="script.js">
+    <link rel="text/javascript" href="/script.js">
+
     <title>Weather Dashboard</title>
+
 </head>
 
 <body>
@@ -28,11 +31,12 @@
             <form action="">
                 <h2>Search for a City:</h2>
                 <form class="example">
-                    <input type="text" placeholder="Search.." name="search"></input>
-                    
+                    <input type="text" placeholder="Search.." name="search" id="search"></input>
+
                     <button type="submit" class="btn btn-sm justify-content-end" id="run-search">
                         <i class="fa fa-search"></i></button>
                 </form>
+
 
                 <!----Where search history rows will be rendered--->
 
@@ -46,13 +50,13 @@
 
                 <div class="row">
                     <div class="card">
-                    <div class="card-body">
-                        <h1>Default Location</h1>
-                        <p>Temperature</p>
-                        <p>Humidity</p>
-                        <p>Wind Speed</p>
-                        <p>UV Index</p>
-                    </div>
+                        <div class="card-body">
+                            <h1 class="city">Default Location</h1>
+                            <p class="temperature">Temperature:</p>
+                            <p class="humidity">Humidity:</p>
+                            <p class="wind speed">Wind Speed:</p>
+                            <p class="uv-index">UV Index:</p>
+                        </div>
                     </div>
                 </div>
 
@@ -60,7 +64,7 @@
 
             <container class="row">
                 <h1>5-Day Forecast:</h1>
-                <div class= d-flex flex-row justify-content-between">
+                <div class=d-flex flex-row justify-content-between>
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -110,7 +114,7 @@
                             <li class="list-group-item">Humidity</li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </container>
 
@@ -120,11 +124,15 @@
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
