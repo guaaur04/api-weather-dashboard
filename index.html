@@ -33,13 +33,13 @@
                 <form class="example">
                     <input type="text" placeholder="Search.." name="search" id="search"></input>
 
-                    <button type="submit" class="btn btn-sm justify-content-end" id="run-search">
+                    <button type="submit" class="btn btn-sm" id="run-search">
                         <i class="fa fa-search"></i></button>
                 </form>
 
 
                 <!----Where search history rows will be rendered--->
-
+                <div id="input-history"></div>
 
 
         </div>
@@ -51,7 +51,7 @@
                 <div class="row">
                     <div class="card">
                         <div class="card-body">
-                            <h1 class="city">Default Location</h1>
+                            <h1 class="city"></h1>
                             <h2 class="date"></h2>
                             <p class="temperature">Temperature:</p>
                             <p class="humidity">Humidity:</p>
@@ -65,58 +65,7 @@
 
             <container class="row">
                 <h1>5-Day Forecast:</h1>
-                <div class="d-flex flex-row justify-content-between" id="fiveday">
-                    <!-- <div class="card" style="width: 18rem;">
-                        <div class="card-body" id="fiveday">
-                         <h5 class="card-title">Current Date</h5> 
-                        </div>
-                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item future-temp">Temperature</li>
-                            <li class="list-group-item">Humidity</li>
-                        </ul> 
-                    </div> -->
-
-                    <!-- <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Temperature</li>
-                            <li class="list-group-item">Humidity</li>
-                        </ul>
-                    </div>
-
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Temperature</li>
-                            <li class="list-group-item">Humidity</li>
-                        </ul>
-                    </div>
-
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Temperature</li>
-                            <li class="list-group-item">Humidity</li>
-                        </ul>
-                    </div>
-
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Temperature</li>
-                            <li class="list-group-item">Humidity</li>
-                        </ul>
-                    </div> -->
-
-                </div>
+                <div class="d-flex flex-row justify-content-between" id="fiveday"></div>
             </container>
 
 

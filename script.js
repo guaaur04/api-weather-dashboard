@@ -27,9 +27,9 @@
 
 
 //Variable to call for the current day from the Moment library 
-// var moment = moment().format("dddd, MMMM Do YYYY")
-// console.log(moment);
-// $(".date").text(moment);
+var moment = moment().format("dddd, MMMM Do YYYY")
+console.log(moment);
+$(".date").text(moment);
 
 $("#run-search").on("click", function (event) {
     event.preventDefault();
@@ -82,22 +82,35 @@ function searchCity(city) {
             var lon = (response.city.coord.lon);
 
             uvFunction(lat, lon);
-            // card containers
 
-            //  var forecastDate=$("<h5>").text
-            //  var futureTemp=$("<")
-            //  var futureHumidity=$(".future-humidity")
+            // var previousCity = JSON.parse(localStorage.getItem("previousCity")) || []
+            // previousCity.push(city)
+            // localStorage.setItem("previousCity",JSON.stringify(previousCity))
 
-            // $(".card").append(forecastDate,futureTemp,futureHumidity);
+            // renderInputs()
+            // localStorage.clear() // Clears localStorage
+
+            var previousCity = JSON.parse(localStorage.getItem("previousCity")) || [];
+            previousCity.push(city)
+            localStorage.setItem("previousCity", JSON.stringify(previousCity))
+
+            renderInputs()
 
         })
-
-    //Here we save user input to local storage and retrieve/display on refresh
-
-    // window.localStorage
-    // location.setItem("","");
-
 }
+
+function renderInputs() {
+    var previousCity = JSON.parse(localStorage.getItem("previousCity")) || []
+    var string = ""
+
+    for (let i = 0; i < previousCity.length; i++) {
+        string += `<h6> <button> ${previousCity[i]} </button></h6>`
+    }
+
+    $("#input-history").html(string)
+}
+
+renderInputs()
 
 function uvFunction(lat, lon) {
 
@@ -118,12 +131,13 @@ function uvFunction(lat, lon) {
 
             //Log the UVqueryURL
             console.log(response);
-
-            $(".uv-index").html(`<h6>uv-index:${response.value}</h6>`)
+            let uvIndex = uvFunction()
+            $(".uv-index").html(`UV Index: ${response.value}`)
         })
 
 }
 
+//Here we create the funtion for today's weather conditions 
 function today(city) {
 
     var APIKey = "f72e28de327966817541bd3ebea3ba1e";
@@ -146,15 +160,12 @@ function today(city) {
             // Log the resulting object
             console.log(response);
 
-
-
             // Transfer content to HTML
-            $(".city").html(`<h1>${response.name} <img scr="${response.weather[0].icon}></h1>`);
+            $(".city").html(`<h1>${response.name} <img src="http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png"></h1>`);
             $(".wind-speed").text(`Wind Speed:${response.wind.speed}`);
             $(".humidity").text(`Humidity: ${response.main.humidity}`);
             $(".temperature").text(`Temperature(F):${response.main.temp}`);
 
            
-
         })
-}
+    }
