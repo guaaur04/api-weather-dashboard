@@ -43,7 +43,7 @@
 
 
         </div>
-
+9
         <main class="column right">
 
             <div>
@@ -52,9 +52,10 @@
                     <div class="card">
                         <div class="card-body">
                             <h1 class="city">Default Location</h1>
+                            <h2 class="date"></h2>
                             <p class="temperature">Temperature:</p>
                             <p class="humidity">Humidity:</p>
-                            <p class="wind speed">Wind Speed:</p>
+                            <p class="wind-speed">Wind Speed:</p>
                             <p class="uv-index">UV Index:</p>
                         </div>
                     </div>
@@ -64,8 +65,18 @@
 
             <container class="row">
                 <h1>5-Day Forecast:</h1>
-                <div class=d-flex flex-row justify-content-between>
+                <div class="d-flex flex-row justify-content-between">
                     <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Current Date</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item future-temp">Temperature</li>
+                            <li class="list-group-item">Humidity</li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                         </div>
@@ -103,17 +114,7 @@
                             <li class="list-group-item">Temperature</li>
                             <li class="list-group-item">Humidity</li>
                         </ul>
-                    </div>
-
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Temperature</li>
-                            <li class="list-group-item">Humidity</li>
-                        </ul>
-                    </div>
+                    </div> -->
 
                 </div>
             </container>
