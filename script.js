@@ -27,9 +27,9 @@
 
 
 //Variable to call for the current day from the Moment library 
-var moment = moment().format("dddd, MMMM Do YYYY")
-console.log(moment);
-$(".date").text(moment);
+// var moment = moment().format("dddd, MMMM Do YYYY")
+// console.log(moment);
+// $(".date").text(moment);
 
 $("#run-search").on("click", function (event) {
     event.preventDefault();
@@ -37,6 +37,7 @@ $("#run-search").on("click", function (event) {
     //Storing the city input
     var city = $("#search").val().trim();
     searchCity(city);
+    today(city);
 });
 
 function searchCity(city) {
@@ -69,23 +70,12 @@ function searchCity(city) {
             <div class="card" style="width: 18rem;">
             <p>${response.list[i].dt_txt}</p>
             <h6>Description :  ${response.list[i].weather[0].description}</h6>
-            <h6>Temp: ${response.list[i].main.temp} <img src="http://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png" /></h6>
+            <h6>Temp: ${response.list[i].main.temp} <img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png" /></h6>
             <h6>Humidity : ${response.list[i].main.humidity}</h6>
             <p> Wind Speed: ${response.list[i].wind.speed}</p>
             </div>`
             }
             $("#fiveday").html(forecast)
-
-            // Transfer content to HTML
-            //  $(".city").html("<h1>" + response.city.name + " Weather Details</h1>"+ "<i>" +response.list[0].weather[0].icon + "</i>");
-            //  $(".wind-speed").text("Wind Speed: " + response.list[0].wind.speed);
-            //  $(".humidity").text("Humidity: " + response.list[0].main.humidity);
-
-            //  var tempF= (response.list[0].main.temp - 273.15) * 1.80 + 32;
-
-            //  $(".temperature").text("Temperature(F):" + tempF.toFixed(2));
-
-            //  $(".uv-index").text("Lat Test"+ response.city.coord.lat);
 
             // Here we are creating a latitude/longitude variable to pull through the UV Index
             var lat = (response.city.coord.lat);
@@ -114,7 +104,7 @@ function uvFunction(lat, lon) {
     //Here we run AJAX to call OpenWeather API UV index
     var APIKey = "f72e28de327966817541bd3ebea3ba1e";
 
-    var UVqueryURL = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${APIKey}`;
+    var UVqueryURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${APIKey}`;
 
 
     $.ajax({
@@ -134,12 +124,12 @@ function uvFunction(lat, lon) {
 
 }
 
-function today(city){
+function today(city) {
 
     var APIKey = "f72e28de327966817541bd3ebea3ba1e";
 
     // Here we are building the URL we need to query the Open Weather database
-    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey + "&units=imperial";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial";
 
     // Here we run our AJAX call to the OpenWeatherMap API
     $.ajax({
@@ -156,4 +146,15 @@ function today(city){
             // Log the resulting object
             console.log(response);
 
+
+
+            // Transfer content to HTML
+            $(".city").html(`<h1>${response.name} <img scr="${response.weather[0].icon}></h1>`);
+            $(".wind-speed").text(`Wind Speed:${response.wind.speed}`);
+            $(".humidity").text(`Humidity: ${response.main.humidity}`);
+            $(".temperature").text(`Temperature(F):${response.main.temp}`);
+
+           
+
+        })
 }
