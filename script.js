@@ -1,31 +1,3 @@
-// GIVEN a weather dashboard with form inputs
-
-// WHEN I search for a city
-
-// THEN I am presented with current and future conditions for that city and that city is added to the search history
-
-// WHEN I view current weather conditions for that city
-
-// THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-
-// WHEN I view the UV index
-
-// THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-
-// WHEN I view future weather conditions for that city
-
-// THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-
-// WHEN I click on a city in the search history
-
-// THEN I am again presented with current and future conditions for that city
-
-// WHEN I open the weather dashboard
-
-// THEN I am presented with the last searched city forecast
-
-
-
 //Variable to call for the current day from the Moment library 
 var moment = moment().format("dddd, MMMM Do YYYY")
 console.log(moment);
@@ -134,34 +106,32 @@ function uvFunction(lat, lon) {
             //Log the UVqueryURL
             console.log(response);
             let uvIndex = uvFunction()
-            $(".uv-index").html(`UV Index: ${response.value}`);
+            $(".uv-index").html(`UV Index: ${response.value}`)
 
 
+        //         if uvFunction $ (response.value <= 2){
+        //            then(response.value) = $("uv-index").css("color", "green")
+        //        }
+           
+        //          else if $(response.value <= 5 || response.value >= 3 ){
+        //            then $("uv-index") = $("uv-index").css("color", "yellow")
+        //        }
+           
+        //        else $(response.value >=6 || response.value >=7)
+        //        then $("uv-index").css.("color", "orange")
+        //        }
+           
+        //        else $(response.value >=8 || response.value <= 10);
+        //        then $("uv-index").css.("color", "red")
+               
+           
+        //        else $(response.value >= 11):
+        //        then $("uv-index").css.("color", "violet");
+           
+        //    }
         })
 
-
      //This displays a color according to the UV-Index value to indicate low, moderate, high, very high and severe weather conditions.
-function highlight(response.value){
-     if $(response.value <= 2){
-        then(response.value) = $("uv-index").css("color", "green")
-    }
-
-      else if $(response.value <= 5 || response.value >= 3 ){
-        then $("uv-index") = $("uv-index").css("color", "yellow")
-    }
-
-    else $(response.value >=6 || response.value >=7)
-    then $("uv-index").css.("color", "orange")
-}
-
-    else $(response.value >=8 || response.value <= 10);
-then $("uv-index").css.("color", "red")
-    
-
-else $(response.value >= 11):
-then $("uv-index").css.("color", "violet");
-
-}
 }
 
 
