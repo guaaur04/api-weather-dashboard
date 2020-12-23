@@ -40,6 +40,7 @@ $("#run-search").on("click", function (event) {
     today(city);
 });
 
+//Creating a function to fetch API data using user input 
 function searchCity(city) {
 
     var APIKey = "f72e28de327966817541bd3ebea3ba1e";
@@ -78,6 +79,7 @@ function searchCity(city) {
             $("#fiveday").html(forecast)
 
             // Here we are creating a latitude/longitude variable to pull through the UV Index
+
             var lat = (response.city.coord.lat);
             var lon = (response.city.coord.lon);
 
@@ -86,10 +88,10 @@ function searchCity(city) {
             // var previousCity = JSON.parse(localStorage.getItem("previousCity")) || []
             // previousCity.push(city)
             // localStorage.setItem("previousCity",JSON.stringify(previousCity))
-
             // renderInputs()
             // localStorage.clear() // Clears localStorage
 
+            //We remove duplicate entries 
             var previousCity = JSON.parse(localStorage.getItem("previousCity")) || [];
             previousCity.push(city)
             localStorage.setItem("previousCity", JSON.stringify(previousCity))
@@ -132,10 +134,36 @@ function uvFunction(lat, lon) {
             //Log the UVqueryURL
             console.log(response);
             let uvIndex = uvFunction()
-            $(".uv-index").html(`UV Index: ${response.value}`)
+            $(".uv-index").html(`UV Index: ${response.value}`);
+
+
         })
 
+
+     //This displays a color according to the UV-Index value to indicate low, moderate, high, very high and severe weather conditions.
+function highlight(response.value){
+     if $(response.value <= 2){
+        then(response.value) = $("uv-index").css("color", "green")
+    }
+
+      else if $(response.value <= 5 || response.value >= 3 ){
+        then $("uv-index") = $("uv-index").css("color", "yellow")
+    }
+
+    else $(response.value >=6 || response.value >=7)
+    then $("uv-index").css.("color", "orange")
 }
+
+    else $(response.value >=8 || response.value <= 10);
+then $("uv-index").css.("color", "red")
+    
+
+else $(response.value >= 11):
+then $("uv-index").css.("color", "violet");
+
+}
+}
+
 
 //Here we create the funtion for today's weather conditions 
 function today(city) {
@@ -166,6 +194,6 @@ function today(city) {
             $(".humidity").text(`Humidity: ${response.main.humidity}`);
             $(".temperature").text(`Temperature(F):${response.main.temp}`);
 
-           
+
         })
-    }
+}
