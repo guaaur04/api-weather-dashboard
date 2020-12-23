@@ -76,9 +76,14 @@ function renderInputs() {
 
     for (let i = 0; i < previousCity.length; i++) {
         string += `<h6> <button> ${previousCity[i]} </button></h6>`
+        
     }
 
-    $("#input-history").html(string)
+    $("#input-history").html(string);
+    $("input-history").on("click", function (event){
+        event.preventDefault();
+        searchCity(city);
+    });
 }
 
 renderInputs()

@@ -1,19 +1,23 @@
 # api-weather-dashboard
 
-**Hi!** Welcome to weather dashboard 
+**Hi!** 
 
-incorporates Weather API- current weather, 5-day forecast, UV Index, and icon database. 
+Welcome to my first weather dashboard
 
-Use can search for a city, and recieve up to date weather information. 
+This application: 
 
-Website saves the users previous searches to easily revisit the weather conditions of previously searched cities. 
+* Incorporates Weather API- current weather, 5-day forecast, UV Index, and icon database. 
 
-Screenshots:
+* Use can search for a city, and recieve up to date weather information. 
 
+* Website saves the users previous searches to easily revisit the weather conditions of previously searched cities. 
 
+**Screenshot**
 
+![Screenshot](/weather-dashboard-screenshot.png)
 
 
 Github: https://github.com/guaaur04/api-weather-dashboard
 
 Live Site: https://guaaur04.github.io/api-weather-dashboard/
+
