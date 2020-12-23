@@ -57,16 +57,13 @@ function searchCity(city) {
 
             uvFunction(lat, lon);
 
-            // var previousCity = JSON.parse(localStorage.getItem("previousCity")) || []
-            // previousCity.push(city)
-            // localStorage.setItem("previousCity",JSON.stringify(previousCity))
-            // renderInputs()
+            var previousCity = JSON.parse(localStorage.getItem("previousCity")) || []
+            previousCity.push(city)
+            localStorage.setItem("previousCity",JSON.stringify(previousCity))
+            renderInputs()
             // localStorage.clear() // Clears localStorage
 
-            //We remove duplicate entries 
-            var previousCity = JSON.parse(localStorage.getItem("previousCity")) || [];
-            previousCity.push(city)
-            localStorage.setItem("previousCity", JSON.stringify(previousCity))
+           
 
             renderInputs()
 
@@ -108,7 +105,7 @@ function uvFunction(lat, lon) {
             let uvIndex = uvFunction()
             $(".uv-index").html(`UV Index: ${response.value}`)
 
-
+//This displays a color according to the UV-Index value to indicate low, moderate, high, very high and severe weather conditions.
         //         if uvFunction $ (response.value <= 2){
         //            then(response.value) = $("uv-index").css("color", "green")
         //        }
@@ -130,8 +127,6 @@ function uvFunction(lat, lon) {
            
         //    }
         })
-
-     //This displays a color according to the UV-Index value to indicate low, moderate, high, very high and severe weather conditions.
 }
 
 
