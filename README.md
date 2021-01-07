@@ -2,8 +2,6 @@
 
 **Hi!** 
 
-Welcome to my first weather dashboard
-
 This application: 
 
 * Incorporates Weather API- current weather, 5-day forecast, UV Index, and icon database. 
